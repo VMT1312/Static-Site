@@ -45,6 +45,5 @@ class TestHTMLNode(unittest.TestCase):
                 )
         self.assertEqual("<p><b>Bold text</b><p><a href=https://www.google.com>Link</a></p></p>", node.to_html())
 
-
 if __name__ == "__main__":
     unittest.main()
