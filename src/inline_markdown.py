@@ -2,6 +2,7 @@ import re
 
 from textnode import TextNode, TextType
 
+
 def text_to_textnodes(text):
     initial_node = TextNode(text, TextType.TEXT)
     processed_node = split_nodes_delimiter(initial_node, '**', TextType.BOLD)

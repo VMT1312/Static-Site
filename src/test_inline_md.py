@@ -5,7 +5,8 @@ from inline_markdown import (
     split_nodes_link,
     extract_markdown_links,
     extract_markdown_images,
-    text_to_textnodes
+    text_to_textnodes,
+    markdown_to_blocks
 )
 
 from textnode import TextNode, TextType
@@ -179,7 +180,6 @@ def test_text_to_textnodes():
         TextNode(" and ", TextType.TEXT),
         TextNode("italic", TextType.ITALIC)
     ]
-
 
 if __name__ == "__main__":
     unittest.main()
