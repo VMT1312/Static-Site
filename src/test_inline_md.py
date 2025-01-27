@@ -5,8 +5,7 @@ from inline_markdown import (
     split_nodes_link,
     extract_markdown_links,
     extract_markdown_images,
-    text_to_textnodes,
-    markdown_to_blocks
+    text_to_textnodes
 )
 
 from textnode import TextNode, TextType
