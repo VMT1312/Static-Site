@@ -4,13 +4,13 @@ from textnode import TextNode, TextType
 
 
 def text_to_textnodes(text):
-    initial_node = TextNode(text, TextType.TEXT)
-    processed_node = split_nodes_delimiter(initial_node, '**', TextType.BOLD)
-    processed_node = split_nodes_delimiter(processed_node, '*', TextType.ITALIC)
-    processed_node = split_nodes_delimiter(processed_node, '`', TextType.CODE)
-    processed_node = split_nodes_image(processed_node)
-    processed_node = split_nodes_link(processed_node)
-    return processed_node
+    nodes = [TextNode(text, TextType.TEXT)]
+    nodes = split_nodes_delimiter(nodes, "**", TextType.BOLD)
+    nodes = split_nodes_delimiter(nodes, "*", TextType.ITALIC)
+    nodes = split_nodes_delimiter(nodes, "`", TextType.CODE)
+    nodes = split_nodes_image(nodes)
+    nodes = split_nodes_link(nodes)
+    return nodes
 
 
 def split_nodes_delimiter(old_nodes, delimiter, text_type):
