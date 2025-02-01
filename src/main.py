@@ -1,11 +1,9 @@
-from textnode import TextNode, TextType
 from copystatic import file_transfer
+from generator import generate_page
 
 def main():
-    node = TextNode("This is a text node", TextType.BOLD, "https://www.boot.dev")
     file_transfer('static/', 'public/')
-    print(node)
-
+    generate_page('content/', '.', 'public/index.html')
 
 
 main()
