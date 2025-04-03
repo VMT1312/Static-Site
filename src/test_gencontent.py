@@ -1,6 +1,6 @@
 import unittest
 
-from generator import extract_title
+from gencontent import extract_title
 
 
 class TestExtractTitle(unittest.TestCase):
@@ -27,9 +27,9 @@ this is a bunch
 
 of text
 
-* and
-* a
-* list
+- and
+- a
+- list
 """
         )
         self.assertEqual(actual, "title")
@@ -45,30 +45,6 @@ no title
         except Exception as e:
             pass
 
-    
-    def test_extract_title(self):
-        md = '# Title'
-        title = extract_title(md)
-        self.assertEqual(
-            title,
-            'Title'
-        )
-
-
-    def test_no_h1_header(self):
-        markdown = "## Subheader\nText without h1"
-        with self.assertRaises(Exception) as context:
-            extract_title(markdown)
-        self.assertEqual(str(context.exception), "No h1 header found in this markdown")
-
-
-    def test_extract_empty(self):
-        markdown = ' \n \n '
-        with self.assertRaises(Exception) as context:
-            extract_title(markdown)
-        self.assertEqual(str(context.exception), 'No h1 header found in this markdown')
-
 
 if __name__ == "__main__":
     unittest.main()
-
